@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo of data-require</title>
+	<script data-main="require.main" src="require-2.1.2-jquery-1.8.2.min.js"></script>
+
+	<style type="text/css">
+		body {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			color: #066EB0;
+			background-color: #90C0DE;
+			font-family: Arial; 
+			font-size: 60px; 
+			line-height: 80px; 
+			font-weight: bold;
+			text-align: center;
+		}
+
+		p {
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	</style>	
+</head>
+
+<body>
+	<div data-require="size-module">
+		<p>SizeModule</p>
+		<a class="grow" href="#">Grow</a>
+		<a class="shrink" href="#">Shrink</a>
+	</div>
+	<div>
+		<p>FadeModule</p>
+		<a class="fade-in" href="#">Fade in</a>
+		<a class="fade-out" href="#">Fade out</a>
+	</div>
+</body>
+</html>

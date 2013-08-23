@@ -18,12 +18,12 @@ define(
             var me = this;
 
             me.$grow.on("click", function() {
-                me.fontSize = me.fontSize + 1;
+                me.fontSize = me.fontSize + 3;
                 me.$content.css("font-size", me.fontSize + "px");
             });
 
             me.$shrink.on("click", function() {
-                me.fontSize = me.fontSize - 1;
+                me.fontSize = me.fontSize - 3;
                 me.$content.css("font-size", me.fontSize + "px");
             });
 

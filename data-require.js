@@ -20,15 +20,14 @@ define(
             };
         }
 
-        function hasDataRequireAttribute($elm) {
-            var dataAttr = $elm.attr("data-require");
-            return typeof dataAttr !== 'undefined' && dataAttr !== false;
+        function hasDataRequireAttribute(elm) {
+            var dataAttr = elm.getAttribute("data-require");
+            return dataAttr !== null;
         }
         
         function initRequiredModules(el) {
 
-            var $el = $(el),
-                modulesToRequire = $el.attr("data-require"),
+            var modulesToRequire = el.getAttribute("data-require"),
                 modules = modulesToRequire.split(' ');
 
             require(modules, function () {
@@ -40,24 +39,23 @@ define(
             });
         }
 
-        function getElementsWithDataRequireAttribute($data) {
-            var elements = [];
+        function getElementsWithDataRequireAttribute(data) {
+            var allElements = data.getElementsByTagName('*'),
+                dataRequireElements = [],
+                i;
 
-            $data.each(function () {
-                if (hasDataRequireAttribute($(this))) {
-                    elements.push(this);
+            for (i = 0; i<allElements.length ; i++) {
+                var e = allElements[i];
+                if (hasDataRequireAttribute(e)) {
+                    dataRequireElements.push(e);
                 }
-            });
+            };
 
-            $data.find('[data-require]').each(function () {
-                elements.push(this);
-            });
-
-            return elements;
+            return dataRequireElements;
         }
 
-        function initDataRequire($data) {
-            var elements = getElementsWithDataRequireAttribute($data);
+        function init(data) {
+            var elements = getElementsWithDataRequireAttribute(data);
 
             var i;
             for (i = 0; i < elements.length; i++) {
@@ -65,11 +63,7 @@ define(
                     elements.splice(elements.indexOf(e), 1);
                 });
             }
-        }
-
-        function init($data) {
-            initDataRequire($data);
-        }
+         }
 
         function dispose() {
             var length = dataRequireModules.length;

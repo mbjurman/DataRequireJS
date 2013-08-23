@@ -10,7 +10,7 @@ requirejs(["data-require"],
         var $document = $(document);
         
         $document.ready(function () {
-            dataRequire.init($document);
+            dataRequire.init(document);
         });
     }
 );

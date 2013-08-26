@@ -5,12 +5,12 @@ requirejs.config({
     waitSeconds: 60
 });
 
-requirejs(["data-require"],
+requirejs(
+    [
+        "data-require"
+    ],
+
     function (dataRequire) {
-        var $document = $(document);
-        
-        $document.ready(function () {
-            dataRequire.init(document);
-        });
+        dataRequire.init(document);
     }
 );

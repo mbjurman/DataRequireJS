@@ -1,8 +1,4 @@
-define(
-    [
-        "jquery"
-    ],
-    function($) {
+define(function() {
 
         function FadeModule(el) {
             var me = this;

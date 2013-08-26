@@ -1,28 +1,12 @@
 define(
-    [
-        "jquery"
-    ],
-    
-    function ($) {
+    function () {
 
         "use strict";
 
         var dataRequireModules = [];
 
-        if (!Array.indexOf) {
-            Array.prototype.indexOf = function (obj, start) {
-                for (var i = (start || 0); i < this.length; i++) {
-                    if (this[i] === obj) {
-                        return i;
-                    }
-                }
-                return -1;
-            };
-        }
-
         function hasDataRequireAttribute(elm) {
-            var dataAttr = elm.getAttribute("data-require");
-            return dataAttr !== null;
+            return elm.getAttribute("data-require") !== null;
         }
         
         function initRequiredModules(el) {
@@ -42,10 +26,12 @@ define(
         function getElementsWithDataRequireAttribute(data) {
             var allElements = data.getElementsByTagName('*'),
                 dataRequireElements = [],
-                i;
+                i,
+                e;
 
-            for (i = 0; i<allElements.length ; i++) {
-                var e = allElements[i];
+            for (i = 0; i < allElements.length; i++) {
+                e = allElements[i];
+
                 if (hasDataRequireAttribute(e)) {
                     dataRequireElements.push(e);
                 }

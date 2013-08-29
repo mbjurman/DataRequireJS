@@ -5,63 +5,57 @@ define(
 
         var dataRequireModules = [];
 
-        function hasDataRequireAttribute(elm) {
-            return elm.getAttribute("data-require") !== null;
+        function toArray(nodeList) {
+            var array = [];
+            for (var i=0 ; i<nodeList.length ; i++) {
+                array.push(nodeList[i]);
+            }
+            return array;
+        }
+
+        function hasDataRequireAttribute(element) {
+            return element.getAttribute("data-require") !== null;
         }
         
-        function initRequiredModules(el) {
-
-            var modulesToRequire = el.getAttribute("data-require"),
-                modules = modulesToRequire.split(' ');
+        function initRequiredModules(element) {
+            var modules = element.getAttribute("data-require").split(' ');
 
             require(modules, function () {
-                var i;
-
-                for (i = 0; i < arguments.length; i++) {
-                    dataRequireModules.push(arguments[i].init.apply(el));
-                }
+                toArray(arguments).map(function(arg) {
+                    dataRequireModules.push(arg.init.apply(element));
+                });
             });
         }
 
-        function getElementsWithDataRequireAttribute(data) {
-            var allElements = data.getElementsByTagName('*'),
-                dataRequireElements = [],
-                i,
-                e;
+        function getDataRequireElements(data) {
+            var allElements = toArray(data.getElementsByTagName('*')),
+                dataRequireElements = [];
 
-            for (i = 0; i < allElements.length; i++) {
-                e = allElements[i];
-
+            allElements.map(function(e) {
                 if (hasDataRequireAttribute(e)) {
                     dataRequireElements.push(e);
                 }
-            };
+            });
 
             return dataRequireElements;
         }
 
         function init(data) {
-            var elements = getElementsWithDataRequireAttribute(data);
+            var dataRequireElements = getDataRequireElements(data);
 
-            var i;
-            for (i = 0; i < elements.length; i++) {
-                initRequiredModules(elements[i], function (e) {
-                    elements.splice(elements.indexOf(e), 1);
-                });
-            }
+            dataRequireElements.map(function(e) {
+                initRequiredModules(e);
+            });
          }
 
         function dispose() {
-            var length = dataRequireModules.length;
-            
-            while (length--) {
-
-                if (dataRequireModules[length] !== undefined && dataRequireModules[length] !== null && typeof dataRequireModules[length].dispose === "function") {
-                    dataRequireModules[length].dispose();
+            dataRequireModules.map(function(module){
+                if (typeof(module.dispose) === 'function') {
+                    module.dispose();
                 }
-                
-                dataRequireModules.splice(length, 1);
-            }
+            });
+
+            dataRequireModules = [];
         }
 
         return {

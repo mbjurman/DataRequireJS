@@ -1,4 +1,8 @@
-define(function() {
+define(
+    [
+        "data-require"
+    ], 
+    function(dataRequire) {
 
         function AjaxLoaderModule(el) {
             var me = this;
@@ -13,16 +17,9 @@ define(function() {
             me.$load.on("click", function() {
                 $.ajax("http://localhost/color-module.html")
                     .done(function(data) {
-                        $("body").append(data);
-                        requirejs(
-                            [
-                                "data-require"
-                            ],
-
-                            function (dataRequire) {
-                                dataRequire.init($(data).get(0));
-                            }
-                        );
+                        var $data = $(data);
+                        $("body").append($data);
+                        dataRequire.init($data.get(0));
                     }
                 );
             });

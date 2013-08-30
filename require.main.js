@@ -11,6 +11,6 @@ requirejs(
     ],
 
     function (dataRequire) {
-        dataRequire.init(document);
+        dataRequire.init(document.body);
     }
 );

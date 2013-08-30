@@ -31,6 +31,8 @@ define(
             var allElements = toArray(data.getElementsByTagName('*')),
                 dataRequireElements = [];
 
+            allElements.push(data);
+
             allElements.map(function(e) {
                 if (hasDataRequireAttribute(e)) {
                     dataRequireElements.push(e);

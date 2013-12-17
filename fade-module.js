@@ -1,4 +1,6 @@
-define(function() {
+define(
+    "fade-module",
+    function() {
 
         function FadeModule(el) {
             var me = this;

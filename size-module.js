@@ -1,4 +1,6 @@
-define(function() {
+define(
+    "size-module",
+    function() {
 
         function SizeModule(el) {
             var me = this;

@@ -4,7 +4,7 @@ A require module that loads other require modules using the data-require attribu
 
 Dependencies
 =============
-require.js
+almond
 
 Example
 =============

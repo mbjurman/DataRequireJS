@@ -6,6 +6,10 @@ Dependencies
 =============
 require.js
 
-Example
+Demo
 =============
-The library can be tested in a browser using the file index.html. This example contains a simple page that loads in two modules using the data-require attribute.
+The library can be tested in a browser using the file demo/index.html. This example contains a simple page that loads in some modules using the data-require attribute. The demo also contains an example of how the module handles ajax-loaded markup.
+
+Unit-test
+=============
+Run: grunt jasmine

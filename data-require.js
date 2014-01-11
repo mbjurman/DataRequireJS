@@ -1,5 +1,7 @@
 define(
-    function () {
+    "data-require",
+    ["req"],
+    function (req) {
 
         "use strict";
 
@@ -20,7 +22,7 @@ define(
         function initRequiredModules(element) {
             var modules = element.getAttribute("data-require").split(' ');
 
-            require(modules, function () {
+            req(modules, function () {
                 toArray(arguments).map(function(arg) {
                     dataRequireModules.push(arg.init.apply(element));
                 });

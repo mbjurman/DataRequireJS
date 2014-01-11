@@ -2,7 +2,12 @@
 
 requirejs.config({
     baseUrl: "",
-    waitSeconds: 60
+    waitSeconds: 60,
+    map: {
+    	'*': {
+    		req: 'require'
+    	}
+    }
 });
 
 requirejs(

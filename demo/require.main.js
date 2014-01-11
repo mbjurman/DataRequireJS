@@ -7,6 +7,9 @@ requirejs.config({
     	'*': {
     		req: 'require'
     	}
+    },
+    paths: {
+        'data-require': '../src/data-require'
     }
 });
 

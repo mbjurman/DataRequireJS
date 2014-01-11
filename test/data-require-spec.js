@@ -30,7 +30,8 @@
 	
 	// Mock the dependency to require 
 	require.config({
-		 map: {
+		baseUrl: 'src/',
+		map: {
 	        '*': {
 	            req: requireStubName
 	        }

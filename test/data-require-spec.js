@@ -39,27 +39,23 @@
 	});
 
 	require(["data-require"], function(sut) {
-		function createTestElement(moduleName, className) {
-			var el = document.createElement("div");
-			el.setAttribute("data-require", moduleName);
-			el.className = className;
-			document.body.appendChild(el);			
-		}
 
 		describe("data-require", function() {
 			it("can load one module", function() {
-				createTestElement("a", "");
+				var el = document.createElement();
+				el.setAttribute("data-require", "a");
 
-				sut.init(document.body);
+				sut.init(el);
 
 				expect(requiredModules.length).toBe(1);
 				expect(requiredModules[0]).toBe("a");
 			});
 
 			it("can load multiple modules", function() {
-				createTestElement("a b c", "");
+				var el = document.createElement();
+				el.setAttribute("data-require", "a b c");
 
-				sut.init(document.body);
+				sut.init(el);
 
 				expect(requiredModules.length).toBe(3);
 				expect(requiredModules[0]).toBe("a");
@@ -68,9 +64,11 @@
 			});
 
 			it("inserts correct element to loaded modules", function() {
-				createTestElement("a", "b");
+				var el = document.createElement();
+				el.setAttribute("data-require", "a");
+				el.className = "b";
 
-				sut.init(document.body);
+				sut.init(el);
 
 				expect(insertedElement.className).toBe("b");
 			});

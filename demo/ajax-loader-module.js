@@ -1,4 +1,5 @@
 define(
+    "ajax-loader-module",
     [
         "data-require"
     ], 

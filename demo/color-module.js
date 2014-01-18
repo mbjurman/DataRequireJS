@@ -1,4 +1,7 @@
-define(function() {
+define(
+    "color-module",
+    [],
+    function() {
 
         function ColorModule(el) {
             var me = this;

@@ -1,0 +1,20 @@
+{
+	"lib": {
+		"src": [
+			"src/data-require.js"
+		]
+	},
+
+	"demo": {
+		"minifyJs": false,
+		"src": [
+			"lib/require-2.1.10.js",
+			"src/data-require.js",
+			"demo/require.main.js",
+			"demo/ajax-loader-module.js",
+			"demo/color-module.js",
+			"demo/size-module.js",
+			"demo/fade-module.js"
+		]
+	}
+}

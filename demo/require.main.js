@@ -9,7 +9,7 @@ requirejs.config({
     	}
     },
     paths: {
-        'data-require': '../src/data-require'
+        'data-require': '../build/data-require.min'
     }
 });
 

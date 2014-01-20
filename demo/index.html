@@ -1,48 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Demo of data-require</title>
+<!DOCTYPE html><html lang="en"></html><head><title>Demo of data-require</title><style type="text/css">body {
+ padding-top: 20px;
+ padding-bottom: 20px;
+ color: #066EB0;
+ background-color: #90C0DE;
+ font-family: Arial; 
+ font-size: 40px; 
+ line-height: 60px; 
+ font-weight: bold;
+ text-align: center;
+}
 
-	<style type="text/css">
-		body {
-			padding-top: 20px;
-			padding-bottom: 20px;
-			color: #066EB0;
-			background-color: #90C0DE;
-			font-family: Arial; 
-			font-size: 40px; 
-			line-height: 60px; 
-			font-weight: bold;
-			text-align: center;
-		}
+div {
+ border-bottom: 5px solid #066EB0;
+ margin: 0;
+ padding: 0 20px 20px;
+}
 
-		div {
-			margin: 0;
-			padding: 0 20px 20px;
-		}
+p {
+ margin: 10px;
+}
 
-		p {
-			margin: 10px;
-		}
-	</style>	
-</head>
-
-<body>
-	<div data-require="size-module">
-		<p>SizeModule</p>
-		<a class="grow" href="#">Grow</a>
-		<a class="shrink" href="#">Shrink</a>
-	</div>
-	<div data-require="fade-module">
-		<p>FadeModule</p>
-		<a class="fade-in" href="#">Fade in</a>
-		<a class="fade-out" href="#">Fade out</a>
-	</div>
-	<div data-require="ajax-loader-module">
-		<p>Ajax loader module</p>
-		<a class="load" href="#">Load</a>
-	</div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" ></script>
-    <script data-main="require.main" src="require-2.1.8.min.js"></script>
-</body>
-</html>
+a {
+ margin-left: 20px;
+}</style></head><body><div data-require="size-module"><p>SizeModule</p><a href="#" class="grow">Grow</a><a href="#" class="shrink">Shrink</a></div><div data-require="fade-module"><p>FadeModule</p><a href="#" class="fade-in">Fade in</a><a href="#" class="fade-out">Fade out</a></div><div data-require="ajax-loader-module"><p>Ajax loader module</p><a href="#" class="load">Load</a></div><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><script src="../build/demo.min.js"></script></body>

@@ -30,13 +30,13 @@ module.exports = function(grunt) {
       compile: {
         options: {
           data: {
-            debug: true,
+            debug: false,
             debugSrc: config.demo.src,
             src: ['../build/demo.min.js']
           }
         },
         files: {
-          "demo/index2.html": ["demo/index.jade"]
+          "demo/index.html": ["demo/index.jade"]
         }
       }
     }

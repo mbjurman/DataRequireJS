@@ -16,7 +16,7 @@ define(
             var me = this;
 
             me.$load.on("click", function() {
-                $.ajax("http://localhost/color-module.html")
+                $.ajax("http://localhost:8000/demo/color-module.html")
                     .done(function(data) {
                         var $data = $(data);
                         $("body").append($data);

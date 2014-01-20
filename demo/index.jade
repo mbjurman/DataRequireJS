@@ -17,6 +17,7 @@ head
 		}
 
 		div {
+			border-bottom: 5px solid #066EB0;
 			margin: 0;
 			padding: 0 20px 20px;
 		}
@@ -24,6 +25,11 @@ head
 		p {
 			margin: 10px;
 		}
+
+		a {
+			margin-left: 20px;
+		}
+	
 body
 	div(data-require="size-module")
 		p SizeModule
@@ -38,7 +44,6 @@ body
 		a(class="load", href="#") Load
 
 	script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js")
-	//- script(data-main="require.main", src="require-2.1.8.min.js")
 
 	if debug
 		each file in debugSrc

@@ -33,7 +33,7 @@
 		baseUrl: 'src/',
 		map: {
 	        '*': {
-	            req: requireStubName
+	            require: requireStubName
 	        }
 	    }
 	});

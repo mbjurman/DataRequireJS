@@ -1,19 +1,6 @@
 /*global requirejs: false */
 
-requirejs.config({
-    baseUrl: "",
-    waitSeconds: 60,
-    map: {
-    	'*': {
-    		req: 'require'
-    	}
-    },
-    paths: {
-        'data-require': '../build/data-require.min'
-    }
-});
-
-requirejs(
+require(
     [
         "data-require"
     ],

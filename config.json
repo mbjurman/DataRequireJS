@@ -6,15 +6,15 @@
 	},
 
 	"demo": {
-		"minifyJs": false,
+		"minifyJs": true,
 		"src": [
 			"lib/require-2.1.10.js",
 			"src/data-require.js",
-			"demo/require.main.js",
 			"demo/ajax-loader-module.js",
 			"demo/color-module.js",
 			"demo/size-module.js",
-			"demo/fade-module.js"
+			"demo/fade-module.js",
+			"demo/require.main.js"
 		]
 	}
 }

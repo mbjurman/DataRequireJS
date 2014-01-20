@@ -1,6 +1,6 @@
 define(
     "data-require",
-    ["req"],
+    ["require"],
     function (req) {
 
         "use strict";

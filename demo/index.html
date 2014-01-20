@@ -1,25 +1,51 @@
-<!DOCTYPE html><html lang="en"></html><head><title>Demo of data-require</title><style type="text/css">body {
- padding-top: 20px;
- padding-bottom: 20px;
- color: #066EB0;
- background-color: #90C0DE;
- font-family: Arial; 
- font-size: 40px; 
- line-height: 60px; 
- font-weight: bold;
- text-align: center;
-}
-
-div {
- border-bottom: 5px solid #066EB0;
- margin: 0;
- padding: 0 20px 20px;
-}
-
-p {
- margin: 10px;
-}
-
-a {
- margin-left: 20px;
-}</style></head><body><div data-require="size-module"><p>SizeModule</p><a href="#" class="grow">Grow</a><a href="#" class="shrink">Shrink</a></div><div data-require="fade-module"><p>FadeModule</p><a href="#" class="fade-in">Fade in</a><a href="#" class="fade-out">Fade out</a></div><div data-require="ajax-loader-module"><p>Ajax loader module</p><a href="#" class="load">Load</a></div><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><script src="../build/demo.min.js"></script></body>
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <title>Demo of data-require</title>
+  <style type="text/css">
+    body {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     color: #066EB0;
+     background-color: #90C0DE;
+     font-family: Arial; 
+     font-size: 40px; 
+     line-height: 60px; 
+     font-weight: bold;
+     text-align: center;
+    }
+    
+    div {
+     border-bottom: 5px solid #066EB0;
+     margin: 0;
+     padding: 0 20px 20px;
+    }
+    
+    p {
+     margin: 10px;
+    }
+    
+    a {
+     margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div data-require="size-module">
+    <p>SizeModule</p><a href="#" class="grow">Grow</a><a href="#" class="shrink">Shrink</a>
+  </div>
+  <div data-require="fade-module">
+    <p>FadeModule</p><a href="#" class="fade-in">Fade in</a><a href="#" class="fade-out">Fade out</a>
+  </div>
+  <div data-require="ajax-loader-module">
+    <p>Ajax loader module</p><a href="#" class="load">Load</a>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="../lib/mini_require_ab.js"></script>
+  <script src="../src/data-require.js"></script>
+  <script src="../demo/ajax-loader-module.js"></script>
+  <script src="../demo/color-module.js"></script>
+  <script src="../demo/size-module.js"></script>
+  <script src="../demo/fade-module.js"></script>
+  <script src="../demo/require.main.js"></script>
+</body>

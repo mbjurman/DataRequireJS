@@ -29,8 +29,9 @@ module.exports = function(grunt) {
     jade: {
       compile: {
         options: {
+          pretty: true,
           data: {
-            debug: false,
+            debug: true,
             debugSrc: config.demo.src,
             src: ['../build/demo.min.js']
           }
